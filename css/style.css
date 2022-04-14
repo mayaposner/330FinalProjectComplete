@@ -1,0 +1,460 @@
+body { 
+    font-family: 'Nunito', sans-serif;  
+    background-color: #000000;
+    cursor: url(../cursor/suitcase.png), auto;  
+}  
+
+.nav_links { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header { 
+    border-bottom: 1px solid #FFFFFF;
+    margin-bottom: 5px; 
+}
+
+/*Changing the navigation bar*/
+nav li { 
+    display: inline-block;   
+    padding: 5px; 
+    width: 20%;  
+    margin: auto; 
+    font-weight: lighter; 
+    text-align: center;
+}
+
+/*Changing the inside of bars*/
+nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+    margin: 2px; 
+    font-size: 20px;
+}
+
+/* Current Page */
+.active a{   
+    text-decoration: underline;
+    margin: 2px; 
+    font-weight: bold;
+    color: #FB8763
+
+}  
+
+/* Skip to Main Content */
+.skip{  
+    color: #FB8763; 
+    text-decoration: none; 
+    position: relative;
+    top: -40px
+} 
+
+/* Access Skip Using Tab */
+.skip:focus { 
+    top: 0px;
+} 
+
+/* Nav Stay in Place */
+body > header {  
+    background-color: #000000;
+    top: 0; 
+    z-index: 5;
+} 
+
+
+/* Photo */
+.selfie { 
+    width: 100%;
+}
+
+
+/* Photo */
+.sunsetflight{
+    width: 100%;
+}
+
+h1 { 
+    font-size: 45px; 
+    text-align: center;  
+    color: #FFFFFF;
+    font-family: Verdana, sans-serif;
+}  
+
+/* Flight Icon */
+.fa-solid fa-plane-departure { 
+    display: inline;
+}
+
+
+/* Index Page Smaller Pics */
+.underpics{ 
+    /* background-image: url('../images/sky.jpg'); THIS WAS ON FOR MOBILE - BEFORE PARALAX PICS */
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    padding: 5px; 
+} 
+
+p { 
+    color: #FFFFFF;
+    font-family: "PT Sans", Arial, Helvetica, sans-serif; 
+    font-size: 18px; 
+    text-align: left;   
+    margin: 10px;
+}
+.iwanttext { 
+    margin-top: 20px;
+
+}
+.previewtext { 
+    margin-top: 50px;
+    color: #FB8763;
+}
+
+.mapamericas{
+    background-image:url("../images/americasmappic.jpg");
+    min-height: 550px;
+    background-color: #707070;
+    background-attachment: fixed;
+    background-position: center 75%;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    object-fit: cover; 
+
+  } 
+
+.mapafrica { 
+    background-image:url("../images/africamap.jpg");
+    min-height: 550px;
+    background-color: #707070;
+    background-attachment: fixed;
+    background-position: center 75%;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    object-fit: cover;  
+ 
+}
+
+.europemap { 
+    background-image:url("../images/europemap.jpg");
+    min-height: 550px;
+    background-color: #707070;
+    background-attachment: fixed;
+    background-position: center 75%;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    object-fit: cover; 
+}
+
+
+.mapamericas, .mapafrica, .europemap { 
+    display: none;
+}
+/* Flex Pics */
+.africapics, .americapics { 
+    /* background-image: url('../images/sky.jpg');  THIS WAS ON FOR MOBILE - BEFORE PARALAX PICS */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    height: auto; 
+    padding: 5px; 
+}
+
+.africapics > *, .americapics > *{ 
+    object-fit: cover;
+}
+
+.africasubpicsupper { 
+    display: flex;
+    flex-wrap: wrap;
+} 
+
+.left, .right { 
+    flex: 100%;
+}
+
+footer { 
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: 'Nunito', sans-serif;  
+    text-align: center;
+    border-top: 1px solid #FFFFFF;
+} 
+
+footer p{ 
+    text-align: center;
+}
+
+/* Grid Pics 1 */
+.europepics, .europepics3 { 
+    /* background-image: url('../images/sky.jpg');   THIS WAS ON FOR MOBILE - BEFORE PARALAX PICS */
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));   */
+    grid-template-columns: 1fr;  
+    padding: 5px; 
+    place-items: center;
+}
+
+/* Grid Pics 2 */
+.californiaandarizonapics{ 
+    /* background-image: url('../images/sky.jpg');  THIS WAS ON FOR MOBILE - BEFORE PARALAX PICS */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));  
+    padding: 5px; 
+    place-items: center;
+}
+
+/* Extra */ 
+/* Sets Carousel */
+.carousel { 
+    width: 100vw;
+    height: 80vh; 
+    position: relative;
+}
+
+/* Sets Slide */
+.slide { 
+    position: absolute; 
+    inset: 0;
+    opacity: 0;
+}  
+
+/* Sets Slide Images -- makes sure that aspect ratio stays correcly and centered */
+.slide > img { 
+    display: block; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/* Sets the front pic/slide */
+.slide[data-active] {  
+    opacity: 1;
+} 
+
+/* Buttons -- making them in correct position and visable (zindex)*/ 
+.carousel-button { 
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem; 
+    top: 50%;
+    transform: translateY(-50%); 
+    color:#FFFFFF;
+    cursor: pointer;
+    /* padding: 0 .5rem; */
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+ /* Color changes when color and focus for accessibility */
+.carousel-button:hover, .carousel-button:focus { 
+    background-color: rgba(0, 0, 0, 0.5);
+} 
+
+.carousel-button.previous { 
+    left: 1rem;
+}
+
+.carousel-button.next { 
+    right: 1rem;
+}
+/* Extra End */
+
+form { 
+    margin-top: 10px; 
+    background-color: #000000; 
+    color: #FB8763; 
+} 
+
+/* Form - One Was Messed Up Before */
+textarea { 
+    font-family: "PT Sans", Arial, Helvetica, sans-serif; 
+} 
+
+.flip-card {
+    background-color: transparent;
+    width: 100vw;
+    height: 10vh;
+    /* border: 1px solid #f1f1f1; */
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d; 
+    margin: auto;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner, .flip-card:focus-within .flip-card-inner{
+    transform: rotateY(180deg);
+  }
+
+  
+  
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: #000000;
+    color: #FFFFFF;
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: #000000;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+@keyframes move {
+    from {width: 100%; opacity: 0;}
+        to {width: 100%; opacity: 1;}
+}
+
+.explorepic {   
+    width: 100%;
+    animation: move 3s ease; 
+} 
+
+
+@media screen and (prefers-reduced-motion: reduce){
+    .explorepic {
+        animation:none;
+    } 
+
+    .mapamericas, .mapafrica, .europemap {
+        background-attachment: initial; 
+    } 
+
+    .flip-card .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+@media screen and (min-width: 600px) {  
+
+    nav { 
+        display: flex;
+        flex-direction: row;
+        justify-content: center; 
+    }
+
+    nav li { 
+        width: 100px;
+    }
+
+    .nav_links { 
+        display: grid;
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr; 
+        row-gap: 5px;
+    }
+
+    h1 { 
+        font-size: 55px; 
+    }
+
+    .left, .right { 
+        flex: 50%;
+    }
+
+    header { 
+        position: sticky; 
+    }
+
+    .americaleft, .americaright { 
+        object-fit: cover; 
+        flex: 50%;
+    }
+
+    .californiaandarizonapics { 
+        box-sizing: border-box;
+        padding: 16px;
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: 175px; 
+    }
+
+    .californiaandarizonapics > img { 
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .europepics{ 
+        grid-template-columns: 50% 50%; 
+    }
+
+    .europepics3{ 
+        grid-template-columns: 33% 33% 33%; 
+    }
+
+    .europepics > img, .europepics3 > img{ 
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+
+
+}
+
+@media screen and (min-width: 900px){  
+
+    .nav_links { 
+        width: 100vw;
+        display: flex;
+        flex-direction: row; 
+        justify-content: space-evenly;
+    }  
+
+
+    h1 { 
+    font-size: 65px; 
+    }  
+
+
+    .mapamericas, .europemap, .mapafrica { 
+        display: block;
+    } 
+
+    .africapics{ 
+        justify-content: space-evenly; 
+        row-gap: 20px;
+    } 
+
+    header { 
+        position: relative;
+    }
+
+    .californiaandarizonapics { 
+        box-sizing: border-box;
+        padding: 16px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .gate { 
+        grid-column: span 3;
+        grid-row: span 3;
+    }
+
+    .europepics > img, .europepics3 > img{ 
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+
+
+}
